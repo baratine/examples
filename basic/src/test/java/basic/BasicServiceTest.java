@@ -16,6 +16,7 @@ import org.junit.runner.RunWith;
 @ServiceTest(BasicService.class)
 public class BasicServiceTest
 {
+  //Inject Proxy providing access to BasicService
   @Inject @Service
   private BasicService _service;
 
@@ -25,6 +26,8 @@ public class BasicServiceTest
     ResultFuture<String> result = new ResultFuture<>();
 
     _service.test(result);
+
+    System.out.println("BasicServiceTest.test " + _service.getClass());
 
     Assert.assertEquals("Hello World!", result.get(1, TimeUnit.SECONDS));
   }
