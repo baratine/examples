@@ -1,1 +1,10 @@
- include "basic", "bind-by-address", "bind-by-api", "events", "inject-bean", "lifecycle", "service-manager", "service-ref", "timer", "two-services", "vault"
+include "basic",
+        "bind-by-address",
+        "bind-by-api",
+        "events",
+        "inject-bean",
+        "service-manager",
+        "service-ref",
+        "timer",
+        "two-services",
+        "vault"

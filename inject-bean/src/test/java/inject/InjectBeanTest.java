@@ -1,4 +1,4 @@
-package address;
+package inject;
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,19 +13,19 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 @RunWith(RunnerBaratine.class)
-@ServiceTest(EchoServiceImpl.class)
-public class ServiceAddressTest
+@ServiceTest(HelloService.class)
+public class InjectBeanTest
 {
   @Inject
-  @Service("/echo")
-  private EchoService _echo;
+  @Service
+  private HelloService _service;
 
   @Test
   public void test()
   {
     ResultFuture<String> result = new ResultFuture<>();
 
-    _echo.echo("Hello World!", result);
+    _service.test(result);
 
     Assert.assertEquals("Hello World!", result.get(1, TimeUnit.SECONDS));
   }
